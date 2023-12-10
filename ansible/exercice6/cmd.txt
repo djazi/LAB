@@ -1,0 +1,5 @@
+ansible-playbook -i inventory.yml db.yml
+ansible-galaxy collection install community.mysql #add plugins 
+
+
+ansible-playbook db.yml

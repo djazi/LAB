@@ -1,0 +1,7 @@
+ansible-playbook -i inventory.yml web_db.yml
+ansible-playbook -i inventory.yml web_db.yml -v # for extra infomations
+ansible-playbook -i inventory.yml web_db.yml -vv # for extra infomations more 
+ansible-playbook -i inventory.yml web_db.yml -vvv # for extra infomations more more
+ansible-playbook -i inventory.yml web_db.yml -vvvv # for extra infomations more more
+ansible-playbook -i inventory.yml web_db.yml --syntax-check # check syntax
+ansible-playbook -i inventory.yml web_db.yml -C # dry run
