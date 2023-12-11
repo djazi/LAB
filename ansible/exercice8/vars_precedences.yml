@@ -1,0 +1,20 @@
+---
+- name: Understanding vars
+  hosts: all
+  become: yes
+  # vars:
+  #   dbname: electric
+  #   dbuser : current
+  #   dbpass : tesla
+  tasks:
+  - name: create user
+    ansible.builtin.user:
+      name: "{{USRNM}}"
+      comment: "{{COMMENT}}"
+    register: userout
+  - debug:
+      var: userout.name
+  - debug:
+      var: userout.comment
+        
+

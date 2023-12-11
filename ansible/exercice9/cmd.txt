@@ -1,0 +1,2 @@
+ansible -m setup web01
+ansible -m ping all

@@ -1,0 +1,28 @@
+---
+- name: Provisionning servers
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install ntp agent on AlmaLinux 
+      yum:
+        name: chrony
+        state: latest
+      when: ansible_distribution == "AlmaLinux"
+    - name: Install ntp agent on ubuntu
+      apt:
+        name: ntp
+        state: latest
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+    - name: Start ntp service on AlmaLinux
+      service:
+        name: chronyd
+        state: started
+        enabled: yes
+      when: ansible_distribution == "AlmaLinux"
+    - name: Start ntp service on ubuntu
+      service:
+        name: ntp
+        state: started
+        enabled: yes
+      when: ansible_distribution == "Ubuntu"
