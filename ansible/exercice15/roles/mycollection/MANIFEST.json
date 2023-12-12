@@ -1,0 +1,30 @@
+{
+ "collection_info": {
+  "description": "your collection description", 
+  "repository": "http://example.com/repository", 
+  "tags": [], 
+  "dependencies": {}, 
+  "authors": [
+   "Vitaliy Bilyk vitaliynfcs@gmail.com"
+  ], 
+  "issues": "http://example.com/issue/tracker", 
+  "name": "mycollection", 
+  "license": [
+   "GPL-2.0-or-later"
+  ], 
+  "documentation": "http://docs.example.com", 
+  "namespace": "bilykv1", 
+  "version": "0.0.1", 
+  "readme": "README.md", 
+  "license_file": null, 
+  "homepage": "http://example.com"
+ }, 
+ "file_manifest_file": {
+  "format": 1, 
+  "ftype": "file", 
+  "chksum_sha256": "9cb24e09c78ece7d5609b2be494ec981ef91894e935eb78c46dfc5d28e1a6acc", 
+  "name": "FILES.json", 
+  "chksum_type": "sha256"
+ }, 
+ "format": 1
+}

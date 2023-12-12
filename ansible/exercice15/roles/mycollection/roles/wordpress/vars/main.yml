@@ -1,0 +1,4 @@
+---
+# vars file for wordpress
+wordpress_version: "4.0.32"
+php_version:       "5.4.16"

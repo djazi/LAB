@@ -1,0 +1,15 @@
+---
+- name: Provisionning servers
+  hosts: all
+  become: yes
+  roles:
+    - role : post-install
+      vars:
+        USRNM: another
+        COMMENT: another Ansible user
+        ntp0: 0.fr.pool.ntp.org
+        ntp1: 1.fr.pool.ntp.org
+        ntp2: 2.fr.pool.ntp.org
+        ntp3: 3.fr.pool.ntp.org
+   
+      

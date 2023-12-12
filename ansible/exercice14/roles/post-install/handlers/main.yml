@@ -1,0 +1,14 @@
+---
+# handlers file for post-install
+- name: REStart ntp service on AlmaLinux
+  service:
+    name: chronyd
+    state: restarted
+    enabled: yes
+  when: ansible_distribution == "AlmaLinux"
+
+- name: ReStart ntp service on ubuntu
+  service:
+    name: ntp
+    state: restarted
+    enabled: yes

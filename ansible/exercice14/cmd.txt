@@ -1,0 +1,24 @@
+roles
+create roles folder and  ansible-galaxy init post-install on the roles folder 
+
+ansible-galaxy init <role_name>
+..
+├── roles
+│   └── post-install
+│       ├── README.md
+│       ├── defaults
+│       │   └── main.yml
+│       ├── files
+│       ├── handlers
+│       │   └── main.yml
+│       ├── meta
+│       │   └── main.yml
+│       ├── tasks
+│       │   └── main.yml
+│       ├── templates
+│       ├── tests
+│       │   ├── inventory
+│       │   └── test.yml
+│       └── vars
+│           └── main.yml
+

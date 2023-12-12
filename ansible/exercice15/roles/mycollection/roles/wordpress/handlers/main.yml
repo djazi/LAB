@@ -1,0 +1,8 @@
+---
+# handlers file for wordpress
+- name: Start web server
+  when: ansible_facts['distribution'] == "Amazon"
+  systemd: 
+    name: httpd 
+    state: restarted
+    enabled: true

@@ -1,0 +1,6 @@
+USRNM: another
+COMMENT: another Ansible user
+ntp0: 0.africa.pool.ntp.org
+ntp1: 1.africa.pool.ntp.org
+ntp2: 2.africa.pool.ntp.org
+ntp3: 3.africa.pool.ntp.org

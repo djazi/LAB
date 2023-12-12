@@ -1,0 +1,31 @@
+---
+# tasks file for wordpress
+    - name: install multiple package on amazon
+      when: ansible_facts['distribution'] == "Amazon"
+      ansible.builtin.package:      # module from the internet 
+        name: 
+        - httpd
+        - php-{{ php_version }} 
+        - php-mysql-{{ php_version }}
+        - telnet 
+        - wget 
+        state: present 
+      notify: Start web server
+
+    - name: Download wordpress
+      when: ansible_facts['distribution'] == "Amazon"
+      ansible.builtin.get_url:
+        url: https://wordpress.org/wordpress-{{ wordpress_version }}.tar.gz
+        dest: /tmp/
+
+    - name: Extract wordpress.tgz into /tmp
+      when: ansible_facts['distribution'] == "Amazon"
+      ansible.builtin.unarchive:
+        src: /tmp/wordpress-{{ wordpress_version }}.tar.gz
+        dest: /tmp/
+        remote_src: true
+
+    - name: Host Wordpress
+      when: ansible_facts['distribution'] == "Amazon"
+      shell: "cp -r /tmp/wordpress/* /var/www/html/"
+      ignore_errors: true
