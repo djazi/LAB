@@ -1,0 +1,15 @@
+---
+apiVersion: v1 # This is the version of the API
+kind: Pod # This is the kind of resource
+metadata: # This is the metadata of the resource
+  name: vproapp # This is the name of the pod
+  namespace: kube-system
+  labels: # This is the label of the pod
+    app: vproapp # This is the label of the pod
+spec: # This is the specification of the pod
+  containers: # This is the container list
+    - name: appcontainer # This is the name of the container
+      image: imranvisualpath/freshtomapp:V7 # This is the image of the container
+      ports: # This is the port mapping
+        - name: vproapp-port # This is the name of the port in the pod
+          containerPort: 8080 # This is the port on the container

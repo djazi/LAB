@@ -1,0 +1,16 @@
+---
+apiVersion: v1 # This is the version of the API
+kind: Service # This is the kind of resource
+metadata: # This is the metadata of the resource
+  name: helloservice-loadbalance # This is the name of the service
+  namespace: kube-system
+spec: # This is the specification of the service
+  ports: # This is the port mapping
+    - port: 8090 # This is the port on the service
+      nodePort: 30001 # This is the port on the node
+      targetPort: vproapp-port # This is the name of the port in the pod
+      protocol: TCP # This is the protocol
+  selector: # This is the label selector
+    app: vproapp # This must match the label on the pod
+  type: LoadBalancer  # This is the type of service
+
