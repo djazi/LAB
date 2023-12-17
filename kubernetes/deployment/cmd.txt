@@ -1,0 +1,20 @@
+  407  kubectl apply -f deployment/deploy.yml
+  408  kybectl get deploy
+  409  kubectl get deploy
+  410  kubectl get rs
+  411  kubectl get pod
+  412  clear
+  413  kubectl dget pod
+  414  kubectl get pod
+  415  kubectl describe pod nginx-deployment-cbdccf466-6jkm7
+  416  clear
+  417  kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1\n
+  418  kubectl get deploy
+  419  kubectl get pod
+  420  kubectl describe pod nginx-deployment-74b6b979f-6dzzt
+  421  clear
+  422  kubectl get rs
+  423  kubectl rollout undo deployment/nginx-deployment\n
+  424  kubectl get rs
+  425  kubectl get pod
+  426  kubectl describe pod nginx-deployment-cbdccf466-2mf6m

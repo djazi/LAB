@@ -1,0 +1,2 @@
+kubectl apply -f cmd\&args/com_args.yml
+kubectl logs command-demo # --------> command-demo tcp://10.0.0.1:443

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod # Pod is a top-level resource in Kubernetes
+metadata: # metadata for the Pod
+  name: dbpod # name of the pod
+spec: # specification of the pod’s contents
+  containers: # list of containers belonging to the pod
+  - image: mysql:5.7 # image to be used by the container
+    name: mysql # name of the container
+    volumeMounts: # list of volumes to be mounted by the container
+    - mountPath: /var/lib/mysql # path where the volume will be mounted
+      name: dbvol # name of the volume
+  volumes: # list of volumes available to the pod
+  - name: dbvol # name of the volume 
+    hostPath: # hostPath volume type mounts a file or directory from the host node’s filesystem into your Pod
+      path: /data # directory location on host
+      type: DirectoryOrCreate  # type of volume

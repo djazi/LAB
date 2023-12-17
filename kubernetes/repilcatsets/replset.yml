@@ -1,0 +1,21 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: ReplicaSet # this must be Replicaset or replicaset
+metadata: 
+  name: frontend # name of the replicaset
+  labels: 
+    app: guestbook  # label for the replicaset
+    tier: frontend # label for the replicaset
+spec:
+  # modify replicas according to your case
+  replicas: 5 # no. of pods you want for your application
+  selector: 
+    matchLabels: 
+      tier: frontend # label for the replicaset
+  template: # template for creating pods
+    metadata: # metadata for the pods
+      labels: # labels for the pods
+        tier: frontend # label for the pods
+    spec: 
+      containers:  # container details
+      - name: php-redis # name of the container
+        image:  gcr.io/google-samples/hello-app:2.0
